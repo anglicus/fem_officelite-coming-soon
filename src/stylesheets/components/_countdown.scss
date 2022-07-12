@@ -1,0 +1,114 @@
+@use "../abstracts/colors" as *;
+@use "../abstracts/mixins" as *;
+@use "sass:color";
+
+.countdown {
+
+  &__coming {
+    text-align: center;
+
+    @include breakpoint-up(large) {
+      text-align: left;
+    }
+  }
+
+  &__date {
+    color: $skyBlue;
+  }
+
+  &__block-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 13px;
+
+    margin-top: 18px;
+
+    @include breakpoint-up(medium) {
+      column-gap: 16px;
+      margin-top: 8px;
+    }
+
+    @include breakpoint-up(large) {
+      margin-top: 0;
+      width: 448px;
+    }
+  }
+
+  &__block {
+    width: 25%;
+    text-align: center;
+    padding: 12px 0 16px 0;
+    border-radius: 4px;
+
+    @include breakpoint-up(medium) {
+      padding: 32px 0 20px 0;
+      border-radius: 13px;
+    }
+
+    @include breakpoint-up(large) {
+      padding: 29px 0px 24px 0px;
+    }
+  }
+
+  &__label {
+     
+    @include breakpoint-up(medium) {
+      margin-top: 12px;
+    }
+  }
+
+
+  // color schemes below
+  &--dark {
+    
+    .countdown {
+
+      &__coming {
+        color: white;
+
+        .coming-date {
+          color: $skyBlue;
+        }
+      }
+
+      &__block {
+        color: white;
+        background-color: $dkGrayishBlue;
+      }
+
+      &__label {
+        opacity: 50%;
+      }
+
+    }
+  }
+
+  &--light {
+
+    .countdown {
+      
+      &__coming {
+        color: black;
+
+        .coming-date {
+          color: $skyBlue;
+        }
+      }
+
+      &__block {
+        background-color: color.adjust($skyBlue, $alpha: -0.9);
+      }
+
+      &__val {
+        color: $skyBlue;
+      }
+
+      &__label {
+        color: $dkGrayishBlue;
+      }
+
+    }
+  }
+}
+

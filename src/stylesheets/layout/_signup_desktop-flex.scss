@@ -1,0 +1,9 @@
+@use "../abstracts/mixins" as *;
+
+body {
+   
+  @include breakpoint-up(large) {
+    display: flex;
+    flex-direction: row;
+  }
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="stylesheet" href="css/sign-up.css">
+    <title>Frontend Mentor | Officelite coming soon site</title>
+</head>
+<body>
+  <div class="signup-header-countown-div">
+    <header class="signup-header">
+      <img src="./assets/shared/logo.svg" alt="" class="header__logo">
+    
+    <h1 class="signup-header__heading">Work smarter. Save time.</h1>
+    <p class="signup-header__summary">
+      Easily manage your projects. Get on the list and receive in-app perks available only to
+      early subscribers. We are moving into final development and getting ready for official launch soon.
+    </p>
+    </header>
+      <div class="signup-countdown countdown countdown--light">
+        <h3 class="countdown__coming">Coming <span class="countdown__date"></span></h3>
+        <div class="countdown__block-div">
+          <div class="countdown__block">
+            <p class="countdown__days countdown__val"></p>
+            <p class="countdown__label">Days</p>
+          </div>
+          <div class="countdown__block">
+            <p class="countdown__hours countdown__val"></p>
+            <p class="countdown__label">Hours</p>
+          </div>
+          <div class="countdown__block">
+            <p class="countdown__minutes countdown__val"></p>
+            <p class="countdown__label">Min</p>
+          </div>
+          <div class="countdown__block">
+            <p class="countdown__seconds countdown__val"></p>
+            <p class="countdown__label">Sec</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="signup-form-div">
+      <form action="" class="signup-form">
+        <div class="signup-form__field-div">
+          <input type="text" class="signup-form__name" placeholder="Name" required>
+          <img src="assets/sign-up/icon-cross.svg" alt="invalid entry icon" class="signup-form__cross name-cross">
+        </div>
+        <div class="signup-form__field-div">
+          <input type="email" class="signup-form__email" placeholder="Email Address" required>
+          <img src="assets/sign-up/icon-cross.svg" alt="invalid entry icon" class="signup-form__cross email-cross">
+        </div>
+        <div class="signup-form__select-div">
+          <select name="select pack" id="signup-select" class="signup-form__select">
+            <option class="select-option" id="option-basic" value="basic-pack">Basic Pack Free</option>
+            <option class="select-option" id="option-pro" value="pro-pack">Pro Pack $9.99</option>
+            <option class="select-option" id="option-ultimate" value="ultimate-pack">Ultimate Pack $19.99</option>
+          </select>
+          <div class="custom-select-menu">
+            <p class="custom-select-menu__current-selection"><span class="custom-select-menu__option-name">Basic Pack </span><span class="custom-select-menu__option-price">Free</span></p>
+            <img class="custom-select-menu__arrow-down" src="./assets/sign-up/icon-arrow-down.svg" alt="arrow down">
+            <ul class="custom-select-menu__option-list options-closed">
+              <li class="custom-select-menu__option"
+                  id="custom-option-basic"
+                  data-value="basic-pack">
+                    <span class="custom-select-menu__option-name">Basic Pack </span>
+                    <span class="custom-select-menu__option-price">Free</span>
+                    <img class="custom-select-menu__option-check" src="./assets/sign-up/icon-check.svg" alt="check icon">
+              </li>
+              <li class="custom-select-menu__option"
+                  id="custom-option-pro"
+                  data-value="pro-pack">
+                    <span class="custom-select-menu__option-name">Pro Pack </span>
+                    <span class="custom-select-menu__option-price">$9.99</span>
+                    <img class="custom-select-menu__option-check" src="./assets/sign-up/icon-check.svg" alt="check icon">
+              </li>
+              <li class="custom-select-menu__option"
+                  id="custom-option-ultimate"
+                  data-value="ultimate-pack">
+                    <span class="custom-select-menu__option-name">Ultimate Pack </span>
+                    <span class="custom-select-menu__option-price">$19.99</span>
+                    <img class="custom-select-menu__option-check" src="./assets/sign-up/icon-check.svg" alt="check icon">
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="signup-form__field-div">
+          <input type="tel" class="signup-form__phone" placeholder="Phone Number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+          <img src="assets/sign-up/icon-cross.svg" alt="invalid entry icon" class="signup-form__cross phone-number-cross">
+        </div>
+        <div class="signup-form__field-div"><input type="text" class="signup-form__company" placeholder="Company"></div>
+        <button class="signup-form__cta cta cta--get-on-the-list" type="submit" id="submit" value="submit">Get on the list</button>
+      </form>
+    </div>
+
+</body>
+<script src="./js/signup-script.js"></script>
+</html>

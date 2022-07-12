@@ -1,0 +1,80 @@
+@use "../abstracts/colors" as *;
+@use "../abstracts/mixins" as *;
+
+.footer {
+  position: relative;
+  padding: 68px 24px 100px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include breakpoint-up(medium) {
+    padding: 76px 161px 100px;
+  }
+
+  @include breakpoint-up(large) {
+    padding: 82px 165px 91px;
+    flex-direction: row;
+  }
+
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 1248px;
+    bottom: 0;
+    left: 0;
+    background-color: $vdkGrayishBlue;
+    background-image: url('../assets/home/bg-pattern-footer.svg');
+    background-repeat: no-repeat;
+    background-size: 1200px auto;
+    background-position: center 327%;
+
+    @include breakpoint-up(medium) {
+      height: 986px;
+      background-size: 1452px auto;
+      background-position: center 16px;
+    }
+
+    @include breakpoint-up(large) {
+      height: 604px;
+      background-size: 2036px auto;
+      background-position: -702px -615px;
+    }
+   
+  }
+
+  &__countdown {
+    width: 100%;
+  }
+
+  &__cta {
+    margin-top: 40px;
+
+    @include breakpoint-up(medium) {
+      margin-top: 48px;
+    }
+
+    @include breakpoint-up(large) {
+      margin-top: 0;
+      flex-shrink: 0;
+    }
+  }
+
+  &__attribution {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-size: 0.75rem;
+
+    a {
+     // color: $teal;
+      text-decoration: none;
+    }
+  }
+}

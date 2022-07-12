@@ -1,0 +1,46 @@
+@use "../abstracts/mixins" as *;
+@use "sass:math";
+
+.signup-header {
+
+  padding: 152px 24px 0;
+  text-align: center;
+
+  background: url("../assets/home/bg-pattern-header.svg");
+  background-repeat: no-repeat;
+  background-position: center -170px;
+  background-size: math.div(458, 375) * 100% auto;
+
+  @include breakpoint-up(medium) {
+    padding: 202px 98px 0;
+    background: none;
+  }
+
+  @include breakpoint-up(large) {
+    grid-area: header;
+    padding: 260px 124px 0 165px;
+  }
+
+  &__heading {
+    
+    @include breakpoint-up(large) {
+      text-align: left;
+    }
+  }
+
+  &__summary {
+    margin-top: 19px;
+
+    @include breakpoint-up(medium) {
+      margin-top: 26px;
+      padding: 0 2%;
+    }
+
+    @include breakpoint-up(large) {
+      text-align: left;
+      padding: 0;
+    }
+  }
+
+
+}

@@ -1,0 +1,14 @@
+@use "../abstracts/mixins" as *;
+
+.signup-countdown {
+  margin: 64px 24px 0;
+
+  @include breakpoint-up(medium) {
+    margin: 40px 160px;
+  }
+
+  @include breakpoint-up(large) {
+    grid-area: countdown;
+    margin: 40px 0 0 165px;
+  }
+}

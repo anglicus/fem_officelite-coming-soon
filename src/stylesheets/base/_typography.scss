@@ -1,0 +1,111 @@
+@use "../abstracts/mixins" as *;
+
+
+//  font sizes  px(lh)(ls)
+//  element     mob       >     tab     >      desk  
+//  p           16(26)    >             >      18(28)      wt: 400
+//  h1          40(48)    >             >      56(64)      wt: 700
+//  h2          20(28)    >>>                              wt: 700
+//  h3          16(48)(5) >>>                              wt: 700
+//  btn         16(28)    >>>                              wt: 700
+//  input       16(28)    >>>                              wt: 400
+//  dropdown    16(28)    >>>                              wt: 700
+//  li          16(28)    >>>                              wt: 400
+
+    //  special styles
+//  prices      56(64)    >>>
+//   >under     16(28)    >>>
+//  countdown   32(48)    >   56(48)    >>                 wt: 700
+//   >label     12(28)    >   16(28)    >>                 wt: 700
+
+
+html {
+  font-size: 100%;
+}
+
+h1 {
+  font-size: 2.5rem;
+  line-height: 3rem;
+
+  @include breakpoint-up(large) {
+    font-size: 3.5rem;
+    line-height: 4rem;
+  }
+
+}
+
+h2 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+h3 {
+  font-size: 1rem;
+  line-height: 3rem;
+  letter-spacing: 0.3125rem;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.625rem;
+  font-weight: 400;
+
+  @include breakpoint-up(large) {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  &.large-price {
+    font-size: 3.5rem;
+    line-height: 4rem;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+  }
+
+  &.price-label {
+    font-size: 1rem;
+    line-height: 1.75rem;
+    font-weight: 400;
+  }
+
+  &.countdown__val {
+    font-size: 2rem;
+    line-height: 3rem;
+    font-weight: 700;
+
+    @include breakpoint-up(medium) {
+      font-size: 3.5rem;
+    }
+  }
+
+  &.countdown__label {
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 700;
+    text-transform: lowercase;
+
+    @include breakpoint-up(medium) {
+      font-size: 1rem;
+    }
+  }
+
+}
+
+li {
+  font-size: 1rem;
+  line-height: 1.75rem;
+  font-weight: 400;
+}
+
+input, select {
+  font-size: 1rem;
+  line-height: 1.75rem;
+  font-weight: 400;
+}
+
+button {
+  font-size: 1rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+}

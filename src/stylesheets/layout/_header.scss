@@ -1,0 +1,97 @@
+@use "../abstracts/colors" as *;
+@use "../abstracts/mixins" as *;
+@use "sass:math";
+
+.header {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+  background: url("../assets/home/bg-pattern-header.svg");
+  background-repeat: no-repeat;
+  background-position: center -170px;
+  background-size: math.div(458, 375) * 100% auto;
+
+  padding: 156px 24px 0;
+
+  text-align: center;
+
+  @include breakpoint-up(medium) {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 202px 26px 0 39px;
+
+    background-position: 394px -166px;
+    background-size: math.div(666, 768) * 100% auto;
+  }
+
+  @include breakpoint-up(large) {
+    padding: 280px 140px 70px 165px;
+    background-position: 656px -418px;
+    background-size: math.div(1134, 1440) * 100% auto;
+  }
+
+
+
+  &__illustration-div {
+
+    @include breakpoint-up(medium) {
+      padding-top: 24px;
+    }
+
+    @include breakpoint-up(large) {
+      padding-top: 0px;
+      margin-top: -68px;
+    }
+  }
+
+  &__illustration {
+    height: 219px;
+
+    @include breakpoint-up(medium) {
+      height: 356px;
+    }
+
+    @include breakpoint-up(large) {
+      height: 606px;
+    }
+
+  }
+
+
+  &__info {
+    margin-top: 27px;
+
+    @include breakpoint-up(medium) {
+      text-align: left;
+      width: 49%;
+      margin-top: 0;
+    }
+
+    @include breakpoint-up(large) {
+      width: 47.5%;
+    }
+  }
+
+  &__summary {
+    margin-top: 27px;
+
+    @include breakpoint-up(medium) {
+      padding-right: 6px;
+    }
+  }
+
+  &__cta {
+    margin-top: 24px;
+    box-shadow: 0 25px 25px -10px hsl(227, 52%, 50%, 25%);
+
+    @include breakpoint-up(large) {
+      margin-top: 32px;
+    }
+  }
+
+}

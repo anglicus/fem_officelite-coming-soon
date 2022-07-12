@@ -1,0 +1,187 @@
+@use "../abstracts/colors" as *;
+@use "../abstracts/mixins" as *;  
+@use "sass:math";
+
+main {
+  margin-top: 100px;
+
+  @include breakpoint-up(medium) {
+    margin-top: 112px;
+  }
+
+  @include breakpoint-up(large) {
+    margin-top: 35px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 30px;
+  }
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 32px 24px;
+  padding: 40px 0;
+
+  border-radius: 13px;
+
+
+ 
+  @include breakpoint-up(medium) {
+    margin: 24px 40px 24px 39px;
+    padding: 44px 48px 52px;
+
+    // TABLET ONLY: grid display
+    display: grid;
+    grid-template-areas: 
+      "title        features"
+      "price        features"
+      "price-label  features"
+      "button       features";
+    align-items: start;
+    justify-content: start;
+    
+      &__title {
+        grid-area: title;
+      }
+
+      &__price {
+        grid-area: price;
+      }
+
+      &__price-label {
+        grid-area: price-label;
+      }
+
+      &__features {
+        grid-area: features;
+      }
+
+      &__button {
+        grid-area: button;
+      }
+  }
+
+  // DESKTOP switch back to flex
+  @include breakpoint-up(large) {
+    display: flex;
+    align-items: center;
+    width: math.div(350, 1440) * 100%;
+
+    margin: 0;
+    padding: 40px;
+  }
+
+  // color styling
+  &--white {
+    background-color: white;
+    color: $dkGrayishBlue;
+
+    li {
+      color: $ltGrayishBlue;
+    }
+  }
+
+  &--blue {
+    background-color: $skyBlue;
+    background-image: url('../assets/home/bg-pattern-pricing.svg');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 892px auto;
+
+    color: white;
+
+    li {
+      opacity: 0.75;
+    }
+
+    @include breakpoint-up(medium) {
+      background-position: -317px center;
+      background-size: 876px auto;
+    }
+
+    @include breakpoint-up(large) {
+      background-position: center -376px;
+      background-size: 876px auto;
+    }
+  }
+
+  // element styling
+  &__price {
+    margin-top: 36px;
+
+    @include breakpoint-up(medium) {
+      margin-top: 16px;
+    }
+
+    @include breakpoint-up(large) {
+      margin-top: 34px;
+    }
+  }
+
+  &__price-label {
+    margin-top: 12px;
+
+    @include breakpoint-up(medium) {
+      margin-top: 4px;
+    }
+
+    @include breakpoint-up(large) {
+      margin-top: 11px;
+    }
+  }
+
+  &__features {
+    margin-top: 56px;
+
+    li {
+      text-align: center;
+    }
+
+    @include breakpoint-up(medium) {
+      margin-top: 0;
+      padding-bottom: 18px;
+      padding-left: 178px;
+
+      align-self: center;
+
+      li {
+        text-align: left;
+      }
+    }
+
+    @include breakpoint-up(large) {
+      margin-top: 56px;
+      padding: 0;
+
+      li {
+        text-align: center;
+      }
+    }
+  }
+
+  &__cta {
+    margin-top: 32px;
+
+    @include breakpoint-up(medium) {
+      margin-top: 24px;
+    }
+
+    @include breakpoint-up(large) {
+      margin-top: 34px;
+    }
+  }
+
+}
+
+
+li {
+
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}

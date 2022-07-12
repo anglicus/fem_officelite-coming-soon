@@ -1,0 +1,97 @@
+@use "../abstracts/colors" as *;
+@use "../abstracts/mixins" as *;
+
+
+
+.footer {
+  position: relative;
+  padding: 0 0 87px;
+
+
+  @include breakpoint-up(medium) {
+    padding: 0 0 126px;
+  }
+
+  @include breakpoint-up(large) {
+    padding: 82px 165px 91px;
+
+  }
+
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 320px;
+    bottom: 0;
+    left: 0;
+    background-color: $vdkGrayishBlue;
+    background-image: url('../assets/sign-up/bg-pattern-side.svg');
+    background-repeat: no-repeat;
+    background-size: 1205px auto;
+    background-position: center -410px;
+
+    @include breakpoint-up(medium) {
+      height: 380px;
+      background-size: 1452px auto;
+      background-position: center -535px;
+    }
+
+    @include breakpoint-up(large) {
+      height: 604px;
+      background-size: 2036px auto;
+      background-position: -702px -615px;
+    }
+   
+  }
+
+}
+
+/* original
+
+.footer {
+  position: relative;
+  padding: 0 0 87px;
+
+
+  @include breakpoint-up(medium) {
+    padding: 76px 161px 100px;
+  }
+
+  @include breakpoint-up(large) {
+    padding: 82px 165px 91px;
+    flex-direction: row;
+  }
+
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 320px;
+    bottom: 0;
+    left: 0;
+    background-color: $vdkGrayishBlue;
+    background-image: url('../assets/sign-up/bg-pattern-side.svg');
+    background-repeat: no-repeat;
+    background-size: 1205px auto;
+    background-position: center -410px;
+
+    @include breakpoint-up(medium) {
+      height: 380px;
+      background-size: 1452px auto;
+      background-position: center 16px;
+    }
+
+    @include breakpoint-up(large) {
+      height: 604px;
+      background-size: 2036px auto;
+      background-position: -702px -615px;
+    }
+   
+  }
+
+}
+*/

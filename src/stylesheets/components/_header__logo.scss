@@ -1,0 +1,19 @@
+@use "../abstracts/mixins" as *;
+
+.header__logo {
+  position: absolute;
+  top: 46px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  @include breakpoint-up(medium) {
+    top: 72px;
+    left: 39px;
+    transform: none;
+  }
+  
+  @include breakpoint-up(large) {
+    top: 81px;
+    left: 165px;
+  }
+}
